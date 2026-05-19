@@ -10,6 +10,7 @@ El proyecto incluye operaciones CRUD completas, edición de registros y mejoras 
 Elegí la opción de **gestor de películas / series** porque es un contexto cercano y fácil de relacionar con el uso CRUD.  
 Además, permite trabajar de forma sencilla conceptos como películas/series vistas/no vistas, géneros. 
 La idea era añadir poster pero no llegué a tiempo.  
+Se puede ver desde: http://localhost:5000/ 
 
 ---
 
