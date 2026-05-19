@@ -323,7 +323,6 @@ C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\scopedcss\bundle\TodoMVC.styles.css
-C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\compressed\r8pa06yjoh-{0}-pvt4fdlmcw-pvt4fdlmcw.gz
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\staticwebassets.development.json
@@ -335,3 +334,4 @@ C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\TodoMVC.pdb
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\TodoMVC.genruntimeconfig.cache
 C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\ref\TodoMVC.dll
+C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\proyectoAV3\obj\Debug\net9.0\compressed\r8pa06yjoh-{0}-8lbln5bweh-8lbln5bweh.gz

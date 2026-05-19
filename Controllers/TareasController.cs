@@ -11,10 +11,10 @@ public class PeliculasySeriesController : Controller
     {
         var peliculasyseries = new List<PeliculasySeries>();
 
-        var conexion = Database.AbrirConexion();
+        using var conexion = Database.AbrirConexion();
         var sql = "SELECT Id, Titulo, Genero, Estreno, Completada FROM PeliculasySeries ORDER BY Id DESC";
-        var comando = new SqliteCommand(sql, conexion);
-        var reader = comando.ExecuteReader();
+        using var comando = new SqliteCommand(sql, conexion);
+        using var reader = comando.ExecuteReader();
 
         while (reader.Read())
         {
@@ -24,7 +24,7 @@ public class PeliculasySeriesController : Controller
                 Titulo = reader.GetString(1),
                 Genero = reader.GetString(2),
                 Estreno = reader.GetDateTime(3),
-                Completada = reader.GetBoolean(4)
+                Completada = reader.GetInt32(4) == 1
             });
         }
 
@@ -51,9 +51,9 @@ public class PeliculasySeriesController : Controller
             return View(peliseries);
         }
 
-        var conexion = Database.AbrirConexion();
+        using var conexion = Database.AbrirConexion();
         var sql = "INSERT INTO PeliculasySeries (Titulo, Genero, Estreno, Completada) VALUES (@titulo, @genero, @estreno, @completada)";
-        var comando = new SqliteCommand(sql, conexion);
+        using var comando = new SqliteCommand(sql, conexion);
         comando.Parameters.AddWithValue("@titulo", peliseries.Titulo);
         comando.Parameters.AddWithValue("@genero", peliseries.Genero);
         comando.Parameters.AddWithValue("@estreno", peliseries.Estreno);
@@ -65,11 +65,11 @@ public class PeliculasySeriesController : Controller
 
     public IActionResult Editar(int id)
     {
-        var conexion = Database.AbrirConexion();
+        using var conexion = Database.AbrirConexion();
         var sql = "SELECT Id, Titulo, Genero, Estreno, Completada FROM PeliculasySeries WHERE Id = @id";
-        var comando = new SqliteCommand(sql, conexion);
+        using var comando = new SqliteCommand(sql, conexion);
         comando.Parameters.AddWithValue("@id", id);
-        var reader = comando.ExecuteReader();
+        using var reader = comando.ExecuteReader();
 
         if (reader.Read())
         {
@@ -104,17 +104,25 @@ public class PeliculasySeriesController : Controller
             return View(peliseries);
         }
 
-        using var conexion = Database.AbrirConexion();
-        var sql = "UPDATE PeliculasySeries SET Titulo = @titulo, Genero = @genero, Estreno = @estreno, Completada = @completada WHERE Id = @id";
-        using var comando = new SqliteCommand(sql, conexion);
+        try
+        {
+            using var conexion = Database.AbrirConexion();
+            var sql = "UPDATE PeliculasySeries SET Titulo = @titulo, Genero = @genero, Estreno = @estreno, Completada = @completada WHERE Id = @id";
+            using var comando = new SqliteCommand(sql, conexion);
 
-        comando.Parameters.AddWithValue("@titulo", peliseries.Titulo.Trim());
-        comando.Parameters.AddWithValue("@genero", peliseries.Genero.Trim());
-        comando.Parameters.AddWithValue("@estreno", peliseries.Estreno);
-        comando.Parameters.AddWithValue("@completada", peliseries.Completada ? 1 : 0);
-        comando.Parameters.AddWithValue("@id", peliseries.Id);
+            comando.Parameters.AddWithValue("@titulo", peliseries.Titulo.Trim());
+            comando.Parameters.AddWithValue("@genero", peliseries.Genero.Trim());
+            comando.Parameters.AddWithValue("@estreno", peliseries.Estreno);
+            comando.Parameters.AddWithValue("@completada", peliseries.Completada ? 1 : 0);
+            comando.Parameters.AddWithValue("@id", peliseries.Id);
 
-        comando.ExecuteNonQuery();
+            comando.ExecuteNonQuery();
+        }
+        catch (SqliteException ex) when (ex.SqliteErrorCode == 5)
+        {
+            ViewData["Error"] = "La base de datos está ocupada. Inténtalo de nuevo en unos segundos.";
+            return View(peliseries);
+        }
 
         return RedirectToAction("Index");
     }
@@ -123,9 +131,9 @@ public class PeliculasySeriesController : Controller
 
     public IActionResult Completar(int id)
     {
-        var conexion = Database.AbrirConexion();
+        using var conexion = Database.AbrirConexion();
         var sql = "UPDATE PeliculasySeries SET Completada = 1 WHERE Id = @id";
-        var comando = new SqliteCommand(sql, conexion);
+        using var comando = new SqliteCommand(sql, conexion);
         comando.Parameters.AddWithValue("@id", id);
         comando.ExecuteNonQuery();
 
@@ -134,9 +142,9 @@ public class PeliculasySeriesController : Controller
 
     public IActionResult Eliminar(int id)
     {
-        var conexion = Database.AbrirConexion();
+        using var conexion = Database.AbrirConexion();
         var sql = "DELETE FROM PeliculasySeries WHERE Id = @id";
-        var comando = new SqliteCommand(sql, conexion);
+        using var comando = new SqliteCommand(sql, conexion);
         comando.Parameters.AddWithValue("@id", id);
         comando.ExecuteNonQuery();
 

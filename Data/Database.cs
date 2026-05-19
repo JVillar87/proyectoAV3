@@ -23,7 +23,7 @@ public static class Database
 
     public static SqliteConnection AbrirConexion()
     {
-        using var connection = new SqliteConnection(ConnectionString);
+        var connection = new SqliteConnection(ConnectionString);
         connection.Open();
         return connection;
     }
