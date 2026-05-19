@@ -1,5 +1,3 @@
-# proyectoAV3
-
 # Gestor de Películas y Series
 
 Aplicación web con arquitectura MVC (Modelo - Vista - Controlador) que permite gestionar una colección personal de películas y series.
