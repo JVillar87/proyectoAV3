@@ -1,0 +1,43 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TodoMVC
+build_property.RootNamespace = TodoMVC
+build_property.ProjectDir = C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/MSI-GF75thin/Desktop/PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)/PROYAV3/Views/PeliculasySeries/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzeVNlcmllc1xDcmVhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI-GF75thin/Desktop/PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)/PROYAV3/Views/PeliculasySeries/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzeVNlcmllc1xFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI-GF75thin/Desktop/PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)/PROYAV3/Views/PeliculasySeries/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzeVNlcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI-GF75thin/Desktop/PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)/PROYAV3/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/MSI-GF75thin/Desktop/PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)/PROYAV3/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

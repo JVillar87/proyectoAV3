@@ -1,0 +1,4 @@
+C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3\obj\Debug\net10.0\PROYAV3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3\obj\Debug\net10.0\PROYAV3.AssemblyInfoInputs.cache
+C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3\obj\Debug\net10.0\PROYAV3.AssemblyInfo.cs
+C:\Users\MSI-GF75thin\Desktop\PRATICAS GITHUB(Sistemas 0483-Program 0485-Entorns 0487)\PROYAV3\obj\Debug\net10.0\PROYAV3.csproj.CoreCompileInputs.cache

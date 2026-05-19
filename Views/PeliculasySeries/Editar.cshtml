@@ -1,0 +1,46 @@
+@model TodoMVC.Models.PeliculasySeries
+
+@{
+    ViewData["Title"] = "Editar pelicula o serie";
+}
+
+<div class="container container-sm">
+    <h1>Editar pelicula o serie</h1>
+
+    @if (ViewData["Error"] is string error && !string.IsNullOrWhiteSpace(error))
+    {
+        <p class="text-danger">@error</p>
+    }
+
+    <form method="post" action="/PeliculasySeries/Editar">
+        <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+
+        <div class="form-group">
+            <label for="Titulo">Titulo</label>
+            <input type="text" id="Titulo" name="Titulo" value="@Model.Titulo" minlength="3" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Genero">Genero</label>
+            <input type="text" id="Genero" name="Genero" value="@Model.Genero" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Estreno">Año de Estreno</label>
+            <input type="date" id="Estreno" name="Estreno" value="@Model.Estreno.ToString("yyyy-MM-dd")" required />
+        </div>
+
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="Completada" name="Completada" value="true" @(Model.Completada ? "checked" :
+                                    "") /> Vista / Completada
+            </label>
+            <input type="hidden" name="Completada" value="false" />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <a href="/PeliculasySeries" class="btn">Cancelar</a>
+        </div>
+    </form>
+</div>

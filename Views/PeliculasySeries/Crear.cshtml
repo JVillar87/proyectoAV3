@@ -1,0 +1,35 @@
+@model TodoMVC.Models.PeliculasySeries
+
+@{
+    ViewData["Title"] = "Nueva pelicula o serie";
+}
+
+<div class="container container-sm">
+    <h1>Nueva pelicula o serie</h1>
+    @if (ViewData["Error"] is string error && !string.IsNullOrWhiteSpace(error))
+    {
+        <p class="text-danger">@error</p>
+    }
+
+    <form method="post" action="/PeliculasySeries/Crear">
+        <div class="form-group">
+            <label for="Titulo">Titulo</label>
+            <input type="text" id="Titulo" name="Titulo" placeholder="Ej: The Last of Us" autofocus required />
+        </div>
+
+        <div class="form-group">
+            <label for="Genero">Genero</label>
+            <input type="text" id="Genero" name="Genero" placeholder="Ej: Drama" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Estreno">Año de Estreno</label>
+            <input type="date" id="Estreno" name="Estreno" required />
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="/PeliculasySeries" class="btn">Cancelar</a>
+        </div>
+    </form>
+</div>

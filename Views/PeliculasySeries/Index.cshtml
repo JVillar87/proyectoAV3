@@ -1,0 +1,44 @@
+@model List<TodoMVC.Models.PeliculasySeries>
+
+@{
+    ViewData["Title"] = "Mis Películas y Series";
+}
+
+<div class="container">
+    <div class="card-header">
+        <h1> Mis Películas y Series</h1> 
+        <a href="/PeliculasySeries/Crear" class="btn btn-primary">Nueva pelicula o serie</a>
+    </div>
+
+    @if (Model.Count == 0)
+    {   //placeholder actualizado
+        <p class="empty">¡Añade tus películas o series!</p> 
+    }
+    else
+    {
+        <ul class="task-list">
+            @foreach (var peliseries in Model)
+            {
+                <li class="task-item @(peliseries.Completada ? "done" : "")">
+                    <span class="task-title">
+                    @peliseries.Titulo
+                    <small class="text-muted">(@peliseries.Genero)</small> 
+                    <small class="text-muted">- Estreno: @peliseries.Estreno.Year</small>
+                    </span>
+                    <span class="task-actions">
+                        @if (!peliseries.Completada)
+                        {
+                            <a href="/PeliculasySeries/Completar/@peliseries.Id" class="btn btn-success">Completar</a>
+                        }
+                        <a href="/PeliculasySeries/Editar/@peliseries.Id" class="btn btn-primary">Editar</a>
+                        <a href="/PeliculasySeries/Eliminar/@peliseries.Id" class="btn btn-danger"
+                           onclick="return confirm('¿Eliminar esta película o serie?')">Eliminar</a>
+                    </span>
+                    <span class="task-status">
+                        <small class="text-muted">Completada: @(peliseries.Completada ? "✓ Sí" : "✗ No")</small>
+                    </span>
+                </li>
+            }
+        </ul>
+    }
+</div>
