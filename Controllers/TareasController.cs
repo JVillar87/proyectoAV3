@@ -45,18 +45,19 @@ public class PeliculasySeriesController : Controller
             return View(peliseries);
         }
 
-        if (string.IsNullOrWhiteSpace(peliseries.Titulo) || peliseries.Titulo.Trim().Length < 3)
+        if (string.IsNullOrWhiteSpace(peliseries.Titulo) || peliseries.Titulo.Trim().Length < 2)
         {
-            ViewData["Error"] = "El título es obligatorio y debe tener más de 2 caracteres.";
+            ViewData["Error"] = "El título es obligatorio y debe tener mínimo 2 caracteres.";
             return View(peliseries);
         }
 
         var conexion = Database.AbrirConexion();
-        var sql = "INSERT INTO PeliculasySeries (Titulo, Genero, Estreno, Completada) VALUES (@titulo, @genero, @estreno, 0)";
+        var sql = "INSERT INTO PeliculasySeries (Titulo, Genero, Estreno, Completada) VALUES (@titulo, @genero, @estreno, @completada)";
         var comando = new SqliteCommand(sql, conexion);
         comando.Parameters.AddWithValue("@titulo", peliseries.Titulo);
         comando.Parameters.AddWithValue("@genero", peliseries.Genero);
         comando.Parameters.AddWithValue("@estreno", peliseries.Estreno);
+        comando.Parameters.AddWithValue("@completada", peliseries.Completada ? 1 : 0);
         comando.ExecuteNonQuery();
 
         return RedirectToAction("Index");
@@ -90,16 +91,16 @@ public class PeliculasySeriesController : Controller
     public IActionResult Editar(PeliculasySeries peliseries)
     {
 
-        if (string.IsNullOrWhiteSpace(peliseries.Titulo) || peliseries.Titulo.Trim().Length < 3)
+        if (string.IsNullOrWhiteSpace(peliseries.Titulo) || peliseries.Titulo.Trim().Length < 2)
         {
-            ViewData["Error"] = "El titulo es obligatorio.";
+            ViewData["Error"] = "El título es obligatorio y debe tener mínimo 2 caracteres.";
             return View(peliseries);
         }
 
         //Valida género
         if (string.IsNullOrWhiteSpace(peliseries.Genero))
         {
-            ViewData["Error"] = "El genero es obligatorio.";
+            ViewData["Error"] = "El género es obligatorio.";
             return View(peliseries);
         }
 
